@@ -1,0 +1,126 @@
+{
+  "app_name": "TicTacAI",
+  "personality": "7 Dark-First Utility DARK (Gaming/Cyberpunk Variant)",
+  "personality_one_liner": "A high-octane, tactical command interface where every move feels impactful and razor-sharp, heavily grounded in neon accents against an absolute dark canvas.",
+  "color": {
+    "surface": "#0a0a0a",
+    "onSurface": "#ffffff",
+    "surfaceSecondary": "#1a1a1a",
+    "onSurfaceSecondary": "#d4d4d4",
+    "surfaceTertiary": "#262626",
+    "onSurfaceTertiary": "#a3a3a3",
+    "surfaceInverse": "#e5e5e5",
+    "onSurfaceInverse": "#000000",
+    "brand": "#ccff00",
+    "brandPrimary": "#ccff00",
+    "onBrandPrimary": "#0a0a0a",
+    "brandSecondary": "#ff5e00",
+    "onBrandSecondary": "#ffffff",
+    "brandTertiary": "#ccff001a",
+    "onBrandTertiary": "#ccff00",
+    "success": "#00ff66",
+    "onSuccess": "#0a0a0a",
+    "warning": "#ffb700",
+    "onWarning": "#0a0a0a",
+    "error": "#ff3333",
+    "onError": "#ffffff",
+    "info": "#ccff00",
+    "onInfo": "#0a0a0a",
+    "border": "#333333",
+    "borderStrong": "#ccff00",
+    "divider": "#262626"
+  },
+  "typography": {
+    "displayFontFamily": "Rajdhani",
+    "textFontFamily": "Satoshi",
+    "scale": {
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "2xl": 24
+    }
+  },
+  "spacing": {
+    "rule": "Generous tactical spacing. Avoid cramping. Ensure 44pt touch targets.",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 48
+  },
+  "radius_tokens": {
+    "sm": 6,
+    "md": 12,
+    "lg": 20,
+    "pill": 999
+  },
+  "shadow_tier": "0",
+  "navigation": "stack_only",
+  "icon_set": "Phosphor",
+  "glassmorphism": {
+    "enabled": false,
+    "do's": ["Use tonal separation and sharp 1pt borders instead of blur for elevation"],
+    "dont's": ["No glassmorphism, stick to absolute dark performance-driven surfaces"]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "expo-blur",
+      "android": "expo-blur",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "screens": [
+    {
+      "name": "Game",
+      "purpose": "The primary tactical surface where the player competes against the AI on a neon grid.",
+      "states": {
+        "loading": "Dark screen with a glowing neon lime spinning element.",
+        "empty": "Not applicable for the game board, though initially clear of X/O.",
+        "error": "Card overlay with a red error accent and a Retry connection button."
+      },
+      "layout": "Header: Scoreboard (Player, Draw, AI) pinned at the top. Below scoreboard: segmented control for Easy | Medium | Hard. Center: 3x3 grid filling width minus padding. Cells are `surfaceSecondary` with `border` borders. X and O are rendered in `brandPrimary` and `brandSecondary` respectively. Bottom area: AI Move Explanation floating card (`surfaceTertiary` with a neon left border). Sticky bottom CTA: Reset/New Game pinned above safe area."
+    },
+    {
+      "name": "Info",
+      "purpose": "Explains how the Minimax AI algorithm powers the opponent.",
+      "states": {
+        "loading": "Dark screen with a glowing neon lime spinning element.",
+        "empty": "N/A",
+        "error": "Card overlay with a red error accent."
+      },
+      "layout": "Hero image at the top featuring a glowing motherboard behind a heavy gradient-to-dark scrim. Scrollable content area below, detailing the Minimax algorithm using `displayFontFamily` for section titles and `textFontFamily` for readable paragraphs. Use list layouts for key concepts with neon bullet points."
+    }
+  ],
+  "images": {
+    "game_splash_bg": {
+      "url": "https://images.pexels.com/photos/16707924/pexels-photo-16707924.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Dynamic green light streaks on a dark background"
+    },
+    "info_hero_bg": {
+      "url": "https://images.unsplash.com/photo-1631375937044-6dd5beac01d2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHwxfHxnbG93aW5nJTIwZ3JlZW4lMjBuZXVyYWwlMjBuZXR3b3JrfGVufDB8fHx8MTc4ODI4NTAwNnww&ixlib=rb-4.1.0&q=85",
+      "alt": "Glowing green neural network motherboard"
+    }
+  },
+  "haptics": {
+    "board_tap": "medium",
+    "win_state": "success",
+    "reset_button": "light",
+    "difficulty_toggle": "selection"
+  },
+  "instructions_to_main_agent": [
+    "Theme & Palette: Adhere strictly to the Dark-First Utility pattern with neon accents. No purple, blue, indigo, or magenta allowed.",
+    "Typography: Use Rajdhani for all score numbers, player indicators, board cells (X and O), and section titles. Use Satoshi for body text, button labels, and the AI explanation text.",
+    "Board Design: The 3x3 grid should be composed of distinct, sharp cells (`surfaceSecondary` with thin `border`). When a cell is won, apply a `borderStrong` glow/highlight to the winning line. Use Reanimated for drawing the X and O, as well as the winning line reveal.",
+    "AI Explanation: Make sure the AI move explanation card is distinct but not distractive—use a left border with `brandPrimary` or `brandSecondary` to indicate focus.",
+    "Images: Ensure both images include the required vertical gradient scrim (transparent to surface color) to guarantee contrast with any text overlaid. The bottom stop must be >= 70% opacity.",
+    "Haptics: Implement `expo-haptics` heavily. Use 'selection' for difficulty switches, 'medium' for placing X/O, and 'success'/'error' for match ends."
+  ]
+}
