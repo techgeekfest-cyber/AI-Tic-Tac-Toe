@@ -62,51 +62,24 @@ Check Game Result
 
 The process continues until either the player or AI wins, or the game reaches a draw.
 
-## 🎯 Learning Objectives
+## 🎯 Purpose & Learning Objectives
 
-This project was built to explore the intersection of:
+This project was developed as a practical application of the concepts I learned during my **Artificial Intelligence** coursework.
 
-* Artificial Intelligence
-* Game development
-* State-space reasoning
-* Algorithmic decision making
-* Interactive web development
+The goal was to understand how classical AI techniques can be applied to game-playing and decision-making problems by implementing them in an interactive application.
 
-It serves as a small practical demonstration of how AI techniques can be integrated into an interactive game.
+Key concepts explored include:
 
-## 🚀 Future Improvements
+* **Minimax algorithm** for adversarial game-state evaluation
+* **Alpha-Beta pruning** for optimizing game-tree search
+* **A* search algorithm** and heuristic search concepts
+* **State-space search**
+* **Game-tree representation**
+* **Heuristic evaluation**
+* **Recursive search and decision-making**
 
-Possible future extensions include:
-
-* Minimax with Alpha-Beta pruning
-* Multiple AI difficulty levels
-* AI move visualization
-* Search-tree visualization
-* Match statistics
-* AI decision explanations
-* Player-vs-player mode
-* Improved evaluation heuristics
-
-## 📸 Demo
-
-Add screenshots or a GIF of the application here.
-
-Example:
-
-```text
-screenshots/
-├── home.png
-├── gameplay.png
-└── ai-win.png
-```
-
-## 👨‍💻 Project Status
-
-✅ Functional browser-based AI game
-
-Built as a compact portfolio project exploring **AI decision-making and interactive game development**.
+Rather than learning these algorithms only theoretically, this project was created to apply and experiment with them in a practical game-development context.
 
 ## 📄 License
 
-This project is intended for educational and portfolio purposes.
-
+This project is developed for educational and portfolio purposes.
